@@ -88,9 +88,109 @@ def geo_mean(x, y, z):
 print(geo_mean(3, 6, 12))
 
 def har_mean(x, y, z):
-	return 3 / ((1 / x) + (1 / y) + (1 / z))
+	return 3 % ((1/x) + (1/y) + (1/z))
 print(har_mean(8, 7, 3))
 
 def distance(x1, y1, x2, y2):
 	return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
 print(distance(3, 2, 5, 6))
+
+
+#Strings
+s = 'hello world'
+print(s, type(s))
+
+#Conditionals
+##if
+a = 2
+b = 4
+if a == b:
+	print('a equals b')
+print(a,b)
+
+def is_even(x):
+	if x % 2 == 0: return True
+	return False
+print(is_even(2))
+print(is_even(3))
+
+##Boolean
+c = a == b
+print(c)
+print(type(c))
+
+##if-elif-else
+if a < b:	print('a < b')
+elif a > b :	print('a > b')
+else:		print('a == b')
+
+if a < b:	print('a < b')
+elif a <= b:	print('a <= b')
+elif a == b:	print('this will never print')
+
+##Boolean Chains
+if a < b or a > b: print('all things being equal, a and b are not')
+if a < b and a > b: print('this is illogical')
+if not False: print(True)
+
+##Floating Point Warning
+a = 0.3
+b = 0.1 * 3
+if a < b:	print('a < b')
+elif a > b:	print('a > b')
+else: 		print('a == b')
+
+print(abs(a-b))
+if abs(a - b) < 1e-9: print('close enough')
+if math.isclose(a, b): print('close enough')
+
+##String Comparison
+s1 = 'A'
+s2 = 'B'
+s3 = 'a'
+if s1 < s2: print('A < B')
+if s2 < s3: print('B < a')
+
+a = 1
+s = 'G'
+#if a < s: print('a < s') results in "Type Error"
+
+#None Type
+## i.e. program with no 'return' function
+def silly(m, x, b):
+	y = m * x + b
+print(silly(2, 3, 4))
+
+#Function Practice
+def is_integer(x):
+	r = x % 1
+	if math.isclose(0, r): return True
+	else: return False
+print(is_integer(3.0))
+
+def is_prob(p):
+	if 0 <= p <= 1: return True
+	else: return False
+print('10', is_prob(10))
+print('0.6', is_prob(0.6))
+
+def dna_weight(letter):
+	if letter == 'A': return 313.2
+	elif letter == 'C': return 289.2
+	elif letter == 'G': return 329.2
+	elif letter == 'T': return 304.2
+	else: return None
+print(dna_weight('A'))
+print(dna_weight('G'))
+print(dna_weight('S'))
+
+def dna_compliment(letter):
+	if letter == 'A': return 'T'
+	if letter == 'T': return 'A'
+	if letter == 'C': return 'G'
+	if letter == 'G': return 'C'
+	else: return None
+print(dna_compliment('A'))
+print(dna_compliment('T'))
+print(dna_compliment('G'))
+print(dna_compliment('S'))	 
