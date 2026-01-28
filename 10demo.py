@@ -176,9 +176,9 @@ print('0.6', is_prob(0.6))
 
 def dna_weight(letter):
 	if letter == 'A': return 313.2
-	elif letter == 'C': return 289.2
-	elif letter == 'G': return 329.2
-	elif letter == 'T': return 304.2
+	if letter == 'C': return 289.2
+	if letter == 'G': return 329.2
+	if letter == 'T': return 304.2
 	else: return None
 print(dna_weight('A'))
 print(dna_weight('G'))
@@ -194,3 +194,17 @@ print(dna_compliment('A'))
 print(dna_compliment('T'))
 print(dna_compliment('G'))
 print(dna_compliment('S'))	 
+
+
+def max_number(a, b, c):
+	if a > b and a > c: return a
+	if b > a and b > c: return b
+	if c > a and c > b: return c
+	else: return 'More than one max'
+print(max_number(10, 16, 3))
+print(max_number(10, 8, 9))
+print(max_number(10, 4, 29))
+print(max_number(10, 10, 9))
+print(max_number(10, 10, 10))
+
+
