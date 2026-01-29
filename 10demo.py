@@ -195,7 +195,6 @@ print(dna_compliment('T'))
 print(dna_compliment('G'))
 print(dna_compliment('S'))	 
 
-
 def max_number(a, b, c):
 	if a > b and a > c: return a
 	if b > a and b > c: return b
@@ -207,4 +206,141 @@ print(max_number(10, 4, 29))
 print(max_number(10, 10, 9))
 print(max_number(10, 10, 10))
 
+#while
+i = 0
+while True:
+        i = i + 1
+        print('hey', i)
+        if i == 3: break
 
+i = 0
+while i < 3:
+        i = i + 1 
+        print('hey', i)
+
+i = 1
+while i < 10:
+        print(i)   
+        i = i + 3
+print('final value of i is', i)
+
+for i in range(1, 10, 3):
+	print(i)
+
+for i in range(0, 5):
+	print(i)
+
+for i in range(5):
+	print(i)
+
+for i in range(0, 5, 1): print(i)
+
+#Nesting
+for i in range(7):
+	if i % 2 == 0:	print(i, 'is even')
+	else: 		print(i, 'is odd')
+
+#Iteration Practice Problems
+def triangular(n):
+	tri = 0
+	for i in range(n + 1):
+		tri = tri + i
+	return tri
+print(triangular(10))
+
+def factorial(n):
+	fact = 1
+	for i in range(1, n + 1):
+		fact = fact * i
+	return fact
+print(factorial(0))
+#Still works despite 'if n == 0: return 1' being missing
+
+def poisson(n, k):
+	return n**k * math.e**(-n) / factorial(k)
+print(poisson(20, 15))
+
+def nchoosek(n, k):
+	return factorial(n) / (factorial(k) * factorial(n - k))
+print(nchoosek(20, 15))
+
+def euler(limit):
+	e = 0
+	for n in range(limit):
+		e = e + 1 / factorial(n)
+	return e
+print(euler(10))
+
+def is_prime(n):
+	for i in range(2, n//2):
+		if n % i == 0: return False
+	return True
+print(is_prime(11))
+print(is_prime(10))
+
+def nilakantha(limit):
+	pi = 3
+	for i in range(1, limit + 1):
+		n = 2 * i
+		d = n * (n + 1) * (n + 1)
+		if i % 2 == 0: pi = pi - 4 / d
+		else: pi = pi + 4 / d
+	return pi
+print(nilakantha(10))
+
+#Random Numbers
+import random
+
+for i in range(5):
+	print(random.random())
+
+for i in range(3):
+	print(random.randint(1, 6))
+
+random.seed(1)
+print(random.random())
+print(random.random())
+random.seed(2)
+print(random.random())
+print(random.random())
+random.seed(1)
+print(random.random())
+print(random.random())
+
+#More Iteration Practice
+
+#inside = 0
+#total = 0
+#while True:
+       #x = random.random()
+       #y = random.random()
+       #distance = math.sqrt(x**2 + y**2)
+       #total += 1
+       #if distance <= 1:
+               #inside += 1
+       #pi = 4 * (inside / total)
+       #print(pi)
+
+def d6():
+	return random.randint(1, 6)
+
+def dnd_3d6():
+	return d6() + d6() + d6()
+print(dnd_3d6())
+
+def dnd_3d6r1():
+	total = 0
+	for i in range(3):
+		roll = d6()
+		while roll == 1:
+			roll = d6()
+		total += roll
+	return total
+print(dnd_3d6r1())
+
+def dnd_3d6x2():
+	total = 0
+	for i in range(3):
+		total += max(d6(), d6())
+	return total
+print(dnd_3d6x2())
