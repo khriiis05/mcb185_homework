@@ -18,3 +18,5 @@ for i in range(trials):
 		matches += 1
 
 print((matches / trials) * 100)
+
+#python3 23birthday.py 10000 365 23
